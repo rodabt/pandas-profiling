@@ -1,0 +1,10 @@
+es:
+  num: Numérica
+  date: Fecha
+  cat: Categórica
+  uniq: Categórica, Única
+  const: Constante
+  corr: Altamente correlacionada
+  _has_constant_value_: " tiene un valor constante "
+  
+

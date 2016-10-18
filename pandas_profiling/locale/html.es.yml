@@ -1,0 +1,32 @@
+es:
+  overview: Resumen  
+  dataset_info: Información del set de datos
+  sample: Ejemplo
+  number_of_variables: Número de variables
+  number_of_observations: Número de observaciones
+  total_missing: Valores faltantes
+  total_size_in_memory: Tamaño total en memoria
+  average_record_size_in_memory: Tamaño promedio de registro en memoria
+  variables_types: Tipos de variables
+  numeric: Numéricas
+  categorical: Categóricas
+  date: Tipo Fecha
+  unique: Texto (únicas)
+  rejected: Rechazadas
+  warnings: Advertencias
+  freq_table_value: Valor
+  freq_table_count: Cantidad
+  freq_table_frequency: Frecuencia
+  row_cat_distinct_count: Conteo de distintos
+  row_cat_unique: Únicos
+  row_cat_p_missing: Porcentaje de faltantes
+  row_cat_n_missing: Número de faltantes
+  toggle_details:  Activar/desactivar detalles
+  row_const_ignored_constant_variable: Esta variable es constante y debería ser ignorada para el análisis
+  row_const_constant_value: Valor constante
+  row_corr_highly_correlated_with: Esta variable está altamente correlacionada con
+  row_corr_ignored_for_analysis: y debería sera ignorada para el análisis
+  row_corr_correlation: Correlación
+  profile_report: Reporte de datos
+  
+  

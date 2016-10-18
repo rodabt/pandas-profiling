@@ -1,60 +1,60 @@
 <div class="row variablerow">
     <div class="col-md-6 namecol">
-        <p class="h4">Dataset info</p>
+        <p class="h4">{{ html_text['dataset_info'] }}</p>
         <table class="stats" style="margin-left: 1em;">
             <tbody>
             <tr>
-                <th>Number of variables</th>
+                <th>{{ html_text['number_of_variables'] }}</th>
                 <td>{{ values['nvar'] }} </td>
             </tr>
             <tr>
-                <th>Number of observations</th>
+                <th>{{ html_text['number_of_observations'] }}</th>
                 <td>{{ values['n'] }} </td>
             </tr>
             <tr>
-                <th>Total Missing (%)</th>
+                <th>{{ html_text['total_missing'] }} (%)</th>
                 <td>{{ values['total_missing'] }} </td>
             </tr>
             <tr>
-                <th>Total size in memory</th>
+                <th>{{ html_text['total_size_in_memory'] }}</th>
                 <td>{{ values['memsize'] }} </td>
             </tr>
             <tr>
-                <th>Average record size in memory</th>
+                <th>{{ html_text['average_record_size_in_memory']}}</th>
                 <td>{{ values['recordsize'] }} </td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="col-md-6 namecol">
-        <p class="h4">Variables types</p>
+        <p class="h4">{{ html_text['variables_types'] }}</p>
         <table class="stats" style="margin-left: 1em;">
             <tbody>
             <tr>
-                <th>Numeric</th>
+                <th>{{ html_text['numeric'] }}</th>
                 <td>{{ values['NUM'] }} </td>
             </tr>
             <tr>
-                <th>Categorical</th>
+                <th>{{ html_text['categorical'] }}</th>
                 <td>{{ values['CAT'] }} </td>
             </tr>
             <tr>
-                <th>Date</th>
+                <th>{{ html_text['date'] }}</th>
                 <td>{{ values['DATE'] }} </td>
             </tr>
             <tr>
-                <th>Text (Unique)</th>
+                <th>{{ html_text['unique'] }}</th>
                 <td>{{ values['UNIQUE'] }} </td>
             </tr>
             <tr>
-                <th>Rejected</th>
+                <th>{{ html_text['rejected'] }}</th>
                 <td>{{ values['REJECTED'] }} </td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="col-md-12" style="padding-left: 1em;">
-        <p class="h4">Warnings</p>
+        <p class="h4">{{ html_text['warnings'] }}</p>
         <ul class="list-unstyled">{{ messages }} </ul>
     </div>
 </div>
