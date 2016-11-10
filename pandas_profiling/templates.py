@@ -3,6 +3,7 @@
 '''This file contains all templates used for generating the HTML profile report'''
 
 from jinja2 import Environment, PackageLoader
+import os
 
 # i18n suppport
 import i18n
@@ -17,7 +18,7 @@ jinja2_env = Environment(lstrip_blocks=True, trim_blocks=True, loader=pl)
 
 # Define global translated html headers and text sections
 html_text = dict()
-file = 'pandas_profiling/locale/html.' + LOCALE + '.yml' 
+file = os.path.join(os.path.dirname(__file__), 'locale/html.' + LOCALE + '.yml')
 file_contents = ''
 with open(file, 'r') as f:
     file_contents = f.read()
