@@ -9,7 +9,8 @@ import os
 import i18n
 LOCALE = 'es'
 
-i18n.load_path.append('pandas_profiling/locale')
+i18n_dir = os.path.join(os.path.dirname(__file__), 'locale')
+i18n.load_path.append(i18n_dir)
 i18n.set('locale', LOCALE)
 
 # Initializing Jinja
