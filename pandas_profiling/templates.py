@@ -6,8 +6,10 @@ from jinja2 import Environment, PackageLoader
 
 # i18n suppport
 import i18n
+LOCALE = 'es'
+
 i18n.load_path.append('pandas_profiling/locale')
-i18n.set('locale', 'es')
+i18n.set('locale', LOCALE)
 
 # Initializing Jinja
 pl = PackageLoader('pandas_profiling', 'templates')
@@ -15,12 +17,13 @@ jinja2_env = Environment(lstrip_blocks=True, trim_blocks=True, loader=pl)
 
 # Define global translated html headers and text sections
 html_text = dict()
-text =['overview','dataset_info','sample','number_of_variables','number_of_observations',
-       'total_missing','total_size_in_memory','average_record_size_in_memory','variables_types',
-       'numeric','categorical','date','unique','rejected','warnings','freq_table_value','freq_table_count',
-       'freq_table_frequency','row_cat_distinct_count','row_cat_unique','row_cat_p_missing','row_cat_n_missing',
-       'toggle_details','row_const_ignored_constant_variable','row_const_constant_value','row_corr_highly_correlated_with',
-       'row_corr_ignored_for_analysis','row_corr_correlation','profile_report']
+file = 'pandas_profiling/locale/html.' + LOCALE + '.yml' 
+file_contents = ''
+with open(file, 'r') as f:
+    file_contents = f.read()
+
+html = [s.split(":")[0].strip() for s in file_contents.split("\n")]
+text = [s for s in html if s][1:]
 for s in text:
     html_text[s] = i18n.t('html.' + s)
 
@@ -84,13 +87,13 @@ row_templates_dict = {'NUM': template('row_num'),
                       }
 
 messages = dict()
-messages['CONST'] = u'{0[varname]}' + i18n.t('templates._has_constant_value_') + '{0[mode]}' + ' <span class="label label-primary">Rejected</span>'
-messages['CORR'] = u'{0[varname]} is highly correlated with {0[correlation_var]} (ρ = {0[correlation]}) <span class="label label-primary">Rejected</span>'
-messages['HIGH_CARDINALITY'] = u'{varname} has a high cardinality: {0[distinct_count]} distinct values  <span class="label label-warning">Warning</span>'
-messages['n_duplicates'] = u'Dataset has {0[n_duplicates]} duplicate rows <span class="label label-warning">Warning</span>'
-messages['skewness'] = u'{varname} is highly skewed (γ1 = {0[skewness]})'
-messages['p_missing'] = u'{varname} has {0[n_missing]} / {0[p_missing]} missing values <span class="label label-default">Missing</span>'
-messages['p_infinite'] = u'{varname} has {0[n_infinite]} / {0[p_infinite]} infinite values <span class="label label-default">Infinite</span>'
-messages['p_zeros'] = u'{varname} has {0[n_zeros]} / {0[p_zeros]} zeros'
+messages['CONST'] = u'{0[varname]}' + i18n.t('templates._has_constant_value_') + '{0[mode]}' + ' <span class="label label-primary">' + i18n.t('templates.Rejected') + '</span>'
+messages['CORR'] = u'{0[varname]}' + i18n.t('templates._is_highly_correlated_with_') + '{0[correlation_var]} (ρ = {0[correlation]}) <span class="label label-primary">' + i18n.t('templates.Rejected') + '</span>'
+messages['HIGH_CARDINALITY'] = u'{varname}' + i18n.t('templates._has_a_high_cardinality_') + ': {0[distinct_count]}' + i18n.t('templates._distinct_values_') +  '<span class="label label-warning">' + i18n.t('templates.Warning') + '</span>'
+messages['n_duplicates'] = u''+ i18n.t('templates.Dataset_has_') + '{0[n_duplicates]}' + i18n.t('templates._duplicate_rows_') + '<span class="label label-warning">' + i18n.t('templates.Warning') + '</span>'
+messages['skewness'] = u'{varname}' + i18n.t('templates._is_highly_skewed_') + '(γ1 = {0[skewness]})'
+messages['p_missing'] = u'{varname}' + i18n.t('templates._has_') + '{0[n_missing]} / {0[p_missing]}' + i18n.t('templates._missing_values_') + '<span class="label label-default">' + i18n.t('templates.Missing') + '</span>'
+messages['p_infinite'] = u'{varname}' + i18n.t('templates._has_') + '{0[n_infinite]} / {0[p_infinite]}' + i18n.t('templates._infinite_values_') + '<span class="label label-default">' + i18n.t('templates.Infinite') + '</span>'
+messages['p_zeros'] = u'{varname}' + i18n.t('templates._has_') + '{0[n_zeros]} / {0[p_zeros]}' + i18n.t('templates._zeros')
 
 message_row = u'<li>{message}</l>'

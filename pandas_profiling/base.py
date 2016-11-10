@@ -29,7 +29,6 @@ import types
 import multiprocessing
 from functools import partial
 
-
 def pretty_name(x):
     x *= 100
     if x == int(x):

@@ -1,0 +1,27 @@
+en:
+  num: "Numeric"
+  date: "Date"
+  cat: "Categorical"
+  uniq: "Categorical, Unique"
+  const: "Constant"
+  corr: "Highly correlated"
+  Rejected: "Rejected"
+  Warning: "Warning"
+  Missing: "Missing"
+  Infinite: "Infinite"
+  _has_constant_value_: " has constant value "
+  _is_highly_correlated_with_: " is highly correlated with "
+  _has_a_high_cardinality_: " has a high cardinality "
+  _distinct_values_: " distinct values "
+  Dataset_has_: "Dataset has "
+  _duplicate_rows_: " duplicate rows "
+  _is_highly_skewed_: " is highly skewed "
+  _has_: " has "
+  _missing_values_: " missing values "
+  _infinite_values_: " infinite values "
+  _zeros: " zeros"
+  
+  
+  
+  
+

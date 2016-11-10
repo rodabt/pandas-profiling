@@ -5,6 +5,23 @@ es:
   uniq: Categórica, Única
   const: Constante
   corr: Altamente correlacionada
+  Rejected: Rechazada
+  Warning: Advertencia
+  Missing: Perdidos(as)
+  Infinite: Infinito(a)
   _has_constant_value_: " tiene un valor constante "
+  _is_highly_correlated_with_: " esta altamente correlacionada(o) con "
+  _has_a_high_cardinality_: " tiene una alta cardinalidad "
+  _distinct_values_: " valores distintos "
+  Dataset_has_: "El set de datos "
+  _duplicate_rows_: " filas duplicadas "
+  _is_highly_skewed_: " es altamente sesgada "
+  _has_: " tiene "
+  _missing_values_: " valores perdidos "
+  _infinite_values_: " valores infinitos "
+  _zeros: " ceros"
+  
+  
+  
   
 
